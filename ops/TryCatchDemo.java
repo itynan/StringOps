@@ -7,7 +7,7 @@ public class TryCatchDemo {
 	static Scanner s = new Scanner(System.in);
 	public static void main(String[] args) {	
 		//tryCatch(s);
-		//tryCatch2(s);
+		tryCatch2(s);
 	}
 
 	public static void tryCatch(Scanner s){
@@ -26,7 +26,6 @@ public class TryCatchDemo {
 			System.out.println(e.getMessage());
 			tryCatch(s);
 		}
-		
 	}
 	
 	public static void tryCatch2(Scanner s){
@@ -37,6 +36,9 @@ public class TryCatchDemo {
 		try
 		{
 			element = s.nextInt();
+			if(element == 2)
+				throw new ArrayIndexOutOfBoundsException();
+			
 			System.out.printf("arr[%d] = %d%n", element, arr[element]);
 		}catch (ArrayIndexOutOfBoundsException e)
 		{
